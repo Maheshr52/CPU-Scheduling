@@ -11,39 +11,82 @@
     </style>
 </head>
 <body>
-<div id="outputCotainer">
-    <h1>OUTPUT</h1>
-    <div id="gantt">
+  <div id="inputContainer">
+        <h1>CPU-Scheduling Simulator</h1>
+        <form action="#">
+            <div id="algoContainer">
+                <label for="alogorithm">Select an Alogorithm:</label>
+                <select id="alogorithm">
+                    <option value="fcfs">First Come First Serve(FCFS)</option>
+                    <option value="sjf">Shortest Job First(SJF)</option>
+                    <option value="srtf">Shortest Remaining Time First(SRTF)</option>
+                    <option value="prio1">Priority(Non-Preemptive)</option>
+                    <option value="prio2">Priority(Preemptive)</option>
+                    <option value="rr">Round Robin(RR)</option>
+                </select>
+            </div>
+            <div id="process">
+                <table border="1" style="border-collapse: collapse;">
+                    <thead>
+                        <th>Process ID</th>
+                        <th>Arrival Time</th>
+                        <th>Burst Time</th>
+                    </thead>
+                    <tr>
+                        <td>
+                            <label for="processId1"></label>
+                            <input type="text" id="processId1" placeholder="Process ID">
+                        </td>
+                        <td>
+                            <label for="arrivalTime1"></label>
+                            <input type="number" id="processId1" placeholder="Arrival Time">
+                        </td>
+                        <td>
+                            <label for="burstTime1"></label>
+                            <input type="number" id="processId1" placeholder="Burst Time">
+                        </td>
+                        <td>
+                            <input type="button" value="Add Process">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <input type="button" value="Calculate">
+          </form>          
+    </div>
+    <div id="outputCotainer">
+        <h1>OUTPUT</h1>
+        <div id="gantt">
+
+        </div>
+        <table border="1">
+
+            <thead>
+                <th>Process</th>
+                <th>Arrival Time</th>
+                <th>Burst Time</th>
+                <th>Completion Time</th>
+                <th>Turnaround Time</th>
+                <th>Waiting Time</th>
+            </thead>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="tt">
+            Average Turnaround Time:
+        </div>
+        <div id="wt">
+            Average Waiting Time:
+        </div>
+        <button type="animate">Visualize the Scheduling</button>
+
 
     </div>
-    <table border="1">
-    
-        <thead>
-            <th>Process</th>
-            <th>Arrival Time</th>
-            <th>Burst Time</th>
-            <th>Completion Time</th>
-            <th>Turnaround Time</th>
-            <th>Waiting Time</th>
-        </thead>
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-        </tr>
-    </table>
-    <div id="tt">
-        Average Turnaround Time:
-    </div>
-    <div id="wt">
-        Average Waiting Time:
-    </div>
-    <button type="animate">Visualize the Scheduling</button>
-
-
-</div>
 </body>
 </html>
