@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <style>
-        table,thead,th{
-            border-collapse: collapse;
-        }
-    </style>
 </head>
+
 <body>
-  <div id="inputContainer">
-        <h1>CPU-Scheduling Simulator</h1>
+    <h1>CPU-Scheduling Simulator</h1>
+    <div id="inputContainer">
+        <h2>INPUT</h2>
         <form action="#">
             <div id="algoContainer">
-                <label for="alogorithm">Select an Alogorithm:</label>
+                <label for="alogorithm">Select an Alogorithm</label>
                 <select id="alogorithm">
                     <option value="fcfs">First Come First Serve(FCFS)</option>
                     <option value="sjf">Shortest Job First(SJF)</option>
@@ -24,35 +26,39 @@
                     <option value="prio2">Priority(Preemptive)</option>
                     <option value="rr">Round Robin(RR)</option>
                 </select>
+                <div id="qaumtamTime">
+                    <label for="Qtime">Quantam Time:</label>
+                    <input type="number" placeholder="eg. 2">
+                </div>
             </div>
-            <div id="process">
-                <table border="1" style="border-collapse: collapse;">
-                    <thead>
-                        <th>Process ID</th>
-                        <th>Arrival Time</th>
-                        <th>Burst Time</th>
-                    </thead>
-                    <tr>
-                        <td>
-                            <label for="processId1"></label>
-                            <input type="text" id="processId1" placeholder="Process ID">
-                        </td>
-                        <td>
-                            <label for="arrivalTime1"></label>
-                            <input type="number" id="processId1" placeholder="Arrival Time">
-                        </td>
-                        <td>
-                            <label for="burstTime1"></label>
-                            <input type="number" id="processId1" placeholder="Burst Time">
-                        </td>
-                        <td>
-                            <input type="button" value="Add Process">
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            <input type="button" value="Calculate">
-          </form>          
+            <table>
+                <tr>
+                    <th>Processor ID</th>
+                    <th>Arrival Time</th>
+                    <th>Burst Time</th>
+                    <th>Priority</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="text" id="process1" placeholder="Process Name">
+                    </td>
+                    <td>
+                        <input type="number" id="arraival1" placeholder="Arraival Time">
+                    </td>
+                    <td>
+                        <input type="number" id="burst1" placeholder="Burst Time">
+                    </td>
+                    <td>
+                        <input type="number" id="priority1" placeholder="Priority">
+                    </td>
+                    <td>
+                        <button id="addButton">Add Process</button>
+                    </td>
+                </tr>
+            </table>
+            <button id="solve">Solve</button>
+        </form>
     </div>
     <div id="outputCotainer">
         <h1>OUTPUT</h1>
@@ -89,4 +95,5 @@
 
     </div>
 </body>
+
 </html>

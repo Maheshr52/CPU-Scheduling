@@ -1,0 +1,78 @@
+* {
+    font-family: 'Roboto Slab', serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+#inputContainer {
+    padding: 4% 5%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #80808042;
+}
+
+h1 {
+    font-size: 50px;
+}
+
+h2 {
+    margin: 0px;
+    font-size: 40px;
+}
+
+form {
+    text-align: center;
+}
+
+#algoContainer {
+    margin: 3% 0px;
+    padding: 3%;
+    font-size: x-large;
+    display: inline-grid;
+}
+
+select {
+    width: 25em;
+    margin: 1em;
+    padding: 0.6em;
+    font-size: medium;
+}
+
+#qaumtamTime {
+    font-size: 0.8em;
+    padding: 0.8em 0px;
+}
+
+#process {
+    width: 100%;
+    font-size: large;
+}
+
+
+th {
+    padding: 0px 0px 2% 0px;
+    font-size: 1.4em;
+}
+
+td>input{
+
+    font-size: 1em;
+    padding: 7.5px
+}
+
+button {
+    font-size: 1em;
+    padding: 7.5px;
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+    border-radius: 5px;
+}
+
+#solve{
+    padding: 0.6em 1.3em;
+    margin-top: 50px;
+}
