@@ -76,3 +76,24 @@ button {
     padding: 0.6em 1.3em;
     margin-top: 50px;
 }
+#outputContainer {
+    padding: 4% 5%;
+    border-radius: 20px;
+    box-shadow: 0px 0px 30px 0px #80808042;
+    margin-top: 10%;
+}
+#gantt{
+    border: 1px solid black;
+    padding: 6em;
+    text-align: center;
+}
+#outputContainer th{
+    padding: 0.6em;
+}
+#tt,#wt{
+    font-size: 1.3em;
+}
+#animBtn{
+    text-align: center;
+    padding: 3em;
+}
