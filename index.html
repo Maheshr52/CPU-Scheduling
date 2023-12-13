@@ -7,8 +7,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <title>CPU-Scheduling Simulator</title>
 </head>
 
 <body>
@@ -17,8 +18,9 @@
         <h2>INPUT</h2>
         <form action="#">
             <div id="algoContainer">
-                <label for="alogorithm">Select an Alogorithm</label>
-                <select id="alogorithm">
+                <label for="algorithm">Select an Algorithm</label>
+                <select id="algorithm" title="Tap to select">
+                    <option value="" id="chooseOne">Choose one</option>
                     <option value="fcfs">First Come First Serve(FCFS)</option>
                     <option value="sjf">Shortest Job First(SJF)</option>
                     <option value="srtf">Shortest Remaining Time First(SRTF)</option>
@@ -26,38 +28,38 @@
                     <option value="prio2">Priority(Preemptive)</option>
                     <option value="rr">Round Robin(RR)</option>
                 </select>
-                <div id="qaumtamTime">
+                <!-- <div id="qaumtamTime" class="hide">
                     <label for="Qtime">Quantam Time:</label>
                     <input type="number" placeholder="eg. 2">
-                </div>
+                </div> -->
             </div>
-            <table>
+            <!-- <table class="hide">
                 <tr>
                     <th>Processor ID</th>
                     <th>Arrival Time</th>
                     <th>Burst Time</th>
-                    <th>Priority</th>
+                    <th id="prioHead" class="hide">Priority</th>
                     <th></th>
                 </tr>
                 <tr>
                     <td>
-                        <input type="text" id="process1" placeholder="Process Name">
+                        <input type="text" id="processID" placeholder="Process Name">
                     </td>
                     <td>
-                        <input type="number" id="arraival1" placeholder="Arraival Time">
+                        <input type="number" id="arrival" placeholder="Arraival Time">
                     </td>
                     <td>
-                        <input type="number" id="burst1" placeholder="Burst Time">
+                        <input type="number" id="burst" placeholder="Burst Time">
                     </td>
                     <td>
-                        <input type="number" id="priority1" placeholder="Priority">
+                        <input type="number" id="priority" class="hide" placeholder="Priority">
                     </td>
                     <td>
                         <button id="addButton">Add Process</button>
                     </td>
                 </tr>
             </table>
-            <button id="solve">Solve</button>
+            <button id="solve" class="hide">Solve</button> -->
         </form>
     </div>
 
@@ -76,7 +78,7 @@
 
 
 
-    <div id="outputContainer">
+    <!-- <div id="outputContainer" class="hide">
         <h2>OUTPUT</h2>
         <div id="gantt">
             <h3>Gantt Chat</h3>
@@ -110,7 +112,8 @@
             <button>Visualize the Scheduling</button>
         </div>
 
-    </div>
+    </div> -->
+    <script src="app.js"></script>
 </body>
 
 </html>
