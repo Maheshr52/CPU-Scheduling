@@ -9,6 +9,7 @@ body {
 }
 
 #inputContainer {
+    margin:5%;
     padding: 4% 5%;
     border-radius: 20px;
     box-shadow: 0px 0px 30px 0px #80808042;
@@ -51,10 +52,9 @@ select {
     font-size: large;
 }
 
-
 th {
     padding: 0px 0px 2% 0px;
-    font-size: 1.4em;
+    font-size: 1.2em;
 }
 
 td>input{
@@ -80,18 +80,18 @@ button {
     padding: 4% 5%;
     border-radius: 20px;
     box-shadow: 0px 0px 30px 0px #80808042;
-    margin-top: 10%;
+    margin: 5%;
 }
 #gantt{
     border: 1px solid black;
     padding: 6em;
     text-align: center;
 }
-#outputContainer th{
-    padding: 0.6em;
+#outputContainer th,#outputContainer td{
+    padding: 0.45em;
 }
 #tt,#wt{
-    font-size: 1.3em;
+    font-size: 1.2em;
 }
 #animBtn{
     text-align: center;
