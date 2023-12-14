@@ -49,13 +49,13 @@ function show() {
                     </tr>
                     <tr>
                         <td>
-                            <input type="text" id="processID" placeholder="Process Name" required>
+                            <input type="text" id="processID" placeholder="Process Name" required min="0" max="10">
                         </td>
                         <td>
-                        <input type="number" id="arrival" placeholder="Arrival Time" required>
+                        <input type="number" id="arrival" placeholder="Arrival Time" required min="0" max="10">
                         </td>
                         <td>
-                            <input type="number" id="burst" placeholder="Burst Time" required>
+                            <input type="number" id="burst" placeholder="Burst Time" required min="0" max="10">
                         </td>
                         <td>
                             <button type="button" id="addButton" onclick="newProcess()">Add Process</button>
@@ -77,16 +77,16 @@ function showPriority() {
                 </tr>
                 <tr>
                     <td>
-                    <input type="text" id="processID" placeholder="Process Name" required>
+                    <input type="text" id="processID" placeholder="Process Name" required min="0" max="10">
                     </td>
                     <td>
-                        <input type="number" id="arrival" placeholder="Arrival Time" required>
+                        <input type="number" id="arrival" placeholder="Arrival Time" required min="0" max="10">
                     </td>
                     <td>
-                    <input type="number" id="burst" placeholder="Burst Time" required>
+                    <input type="number" id="burst" placeholder="Burst Time" required min="0" max="10">
                     </td>
                     <td>
-                    <input type="number" id="priority" placeholder="Priority" required>
+                    <input type="number" id="priority" placeholder="Priority" required min="0" max="10">
                     </td>
                     <td>
                         <button type="button" id="addButton" onclick="newProcess()">Add Process</button>
@@ -101,13 +101,13 @@ function showPriority() {
 
 let newRowTop = `<tr>
                     <td>
-                        <input type="text" id="processID" placeholder="Process Name" required>
+                        <input type="text" id="processID" placeholder="Process Name" required min="0" max="10">
                     </td>
                     <td>
-                    <input type="number" id="arrival" placeholder="Arraival Time" required>
+                    <input type="number" id="arrival" placeholder="Arraival Time" required min="0" max="10">
                     </td>
                     <td>
-                        <input type="number" id="burst" placeholder="Burst Time" required>
+                        <input type="number" id="burst" placeholder="Burst Time" required min="0" max="10">
                     </td>
                     <td>
                         <button type="button" id="addButton" onclick="newProcess()">Add Process</button>
@@ -115,16 +115,16 @@ let newRowTop = `<tr>
                 </tr>`;
 let newRowPrio = `<tr>
                     <td>
-                    <input type="text" id="processID" placeholder="Process Name" required>
+                    <input type="text" id="processID" placeholder="Process Name" required min="0" max="10">
                     </td>
                     <td>
-                        <input type="number" id="arrival" placeholder="Arraival Time" required>
+                        <input type="number" id="arrival" placeholder="Arraival Time" required min="0" max="10">
                     </td>
                     <td>
-                    <input type="number" id="burst" placeholder="Burst Time" required>
+                    <input type="number" id="burst" placeholder="Burst Time" required min="0" max="10">
                     </td>
                     <td>
-                    <input type="number" id="priority" placeholder="Priority" required>
+                    <input type="number" id="priority" placeholder="Priority" required min="0" max="10">
                     </td>
                     <td>
                         <button type="button" id="addButton" onclick="newProcess()">Add Process</button>
