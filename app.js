@@ -3,6 +3,7 @@ let process = {};
 let tableBlock;
 
 let algorithmType;
+let tableForOutputTbl;
 
 let firstChange = true;
 
@@ -11,20 +12,14 @@ $("#algorithm").change(function () {
         handleAlgorithmChange();
         firstChange = false;
     } else {
-        if (algorithmType === "fcfs" || algorithmType === "sjf" || algorithmType === "srtf") {
             $("#inputTbl,#solve").remove();
             processList.length = 0;
 
             handleAlgorithmChange();
-        }
-        if (algorithmType === "prio1" || algorithmType === "prio2") {
-            $("#inputTbl,#solve").remove();
-            processList.length = 0;
-            handleAlgorithmChange();
-
-        }
+        
 
         $("#outputContainer").remove();
+        solveFirst=true;
     }
 });
 
@@ -156,7 +151,8 @@ function newProcess() {
 
             processList.push(process);
             $("#addButton").remove();
-            $("#processID, #arrival, #burst,#priority").removeAttr("id");
+
+            $("#processID, #arrival, #burst,#priority").prop('readonly', true).removeAttr("id");
 
             $("#inputTbl").append(newRowTop);
         }
@@ -167,7 +163,7 @@ function newProcess() {
             process.priority = parseInt(priorityNum.val());
             processList.push(process);
             $("#addButton").remove();
-            $("#processID, #arrival, #burst,#priority").removeAttr("id");
+            $("#processID, #arrival, #burst,#priority").prop('readonly', true).removeAttr("id");
 
             $("#inputTbl").append(newRowPrio);
 
@@ -177,7 +173,7 @@ function newProcess() {
     }
 
 }
-
+let solveFirst=true;
 function solveBtn() {
     if (processList.length == 0) {
         alert("Please enter atleast one Process")
@@ -187,19 +183,28 @@ function solveBtn() {
         let arrivalTime = $("#arrival");
         let burstTime = $("#burst");
         let priorityNum = $("#priority");
+        if (solveFirst) {
+            if (processID.val() == "" || arrivalTime.val() == "" || burstTime.val() == "" || priorityNum.val() == "") {
+                $("#processID, #arrival, #burst,#priority").prop('readonly', true).removeAttr("id");
+                solveFunction();
+            }
+            else {
+                process = { processName: "", arrival: 0, burst: 0, priority: 0 };
+                process.processName = processID.val();
+                process.arrival = parseInt(arrivalTime.val());
+                process.burst = parseInt(burstTime.val());
+                process.priority = parseInt(priorityNum.val());
+                processList.push(process);
+                $("#processID, #arrival, #burst,#priority").prop('readonly', true).removeAttr("id");
+                solveFunction();
+                
+            }
+            solveFirst=false;
+            
+        }
+        $("#processID, #arrival, #burst,#priority").prop('readonly', true).removeAttr("id");
 
-        if (processID.val() != "" || arrivalTime.val() != "" || burstTime.val() != "" || priorityNum.val() != "") {
-            process = { processName: "", arrival: 0, burst: 0, priority: 0 };
-            process.processName = processID.val();
-            process.arrival = parseInt(arrivalTime.val());
-            process.burst = parseInt(burstTime.val());
-            process.priority = parseInt(priorityNum.val());
-            processList.push(process);
-            solveFunction();
-        }
-        else {
-            solveFunction();
-        }
+        solveFunction();
 
     }
 
@@ -236,7 +241,9 @@ function showOutputContainer() {
 
 
 function solveFunction() {
+    $("#outputContainer").remove();
     showOutputContainer();
+    avgTt=0,avgWt=0;
     switch (algorithmType) {
         case "fcfs":
             solveFCFS();
@@ -535,7 +542,7 @@ function solvePriority2() {
 
 
 function displayOutputTbl() {
-    let tableForOutputTbl;
+
     for (let i = 0; i < processList.length; i++) {
         tableForOutputTbl = `<tr>
                                 <td>${processList[i].processName}</td>
